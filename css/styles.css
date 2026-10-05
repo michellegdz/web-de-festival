@@ -16,7 +16,7 @@ body {
 
 /* ====== HEADER ====== */
 .header {
-  height: 80px;
+  height: 100px;
   background: #05060a;
   display: flex;
   align-items: center;
@@ -97,8 +97,10 @@ body {
 
 /* ====== HERO ====== */
 .hero {
-  height: calc(100vh - 80px);
-  background-image: url("../img/aftersun.jpg");
+  height: calc(100vh - 100px);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../img/aftersun.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -123,4 +125,65 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   margin: 0 0 20px 0;
+}
+
+/* SECCIÓN PELÍCULAS */
+.peliculas {
+  min-height: 100vh;
+  padding: 60px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.peliculas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.peliculas-header h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.peliculas-header a {
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.grid-peliculas {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+/* TARJETAS */
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.card .director {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.card .info,
+.card .genero {
+  font-size: 10px;
+  color: #777;
+  letter-spacing: 1px;
 }
