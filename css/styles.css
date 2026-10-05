@@ -98,8 +98,29 @@ body {
 /* ====== HERO ====== */
 .hero {
   height: calc(100vh - 142px);
-  background-image: url("img/aftersun.jpg");
+  background-image: url("../img/aftersun.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  left: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 90px;
+  line-height: 0.95;
+  margin: 0 0 25px 0;
+}
+
+.hero p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  margin: 0 0 20px 0;
 }
