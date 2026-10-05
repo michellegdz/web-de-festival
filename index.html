@@ -15,13 +15,14 @@
     />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header">
       <a href="#" class="logo"> LUMEN </a>
       <div class="festival-description">
         <span>FESTIVAL DE CINE</span> <span>6 — 12 DICIEMBRE 2026</span>
       </div>
       <nav class="nav">
-        <a href="#" class="active">INICIO</a>
+        <a href="#">INICIO</a>
         <a href="#programacion">PROGRAMACIÓN</a>
         <a href="#peliculas">PELÍCULAS</a>
         <a href="#eventos">EVENTOS</a>
@@ -30,6 +31,7 @@
       </nav>
     </header>
 
+    <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="hero-text">
         <h1>
@@ -45,6 +47,7 @@
       </div>
     </section>
 
+    <!-- SECCIÓN PELÍCULAS -->
     <section id="peliculas" class="peliculas">
       <div class="peliculas-header">
         <h2>PELÍCULAS DESTACADAS</h2>
@@ -52,6 +55,7 @@
       </div>
 
       <div class="grid-peliculas">
+        <!-- Película 1 -->
         <article class="card">
           <img src="img/nuestra tierra.jpeg" alt="Nuestra Tierra" />
           <h3>Nuestra Tierra</h3>
@@ -60,6 +64,7 @@
           <p class="genero">DRAMA</p>
         </article>
 
+        <!-- Película 2 -->
         <article class="card">
           <img src="img/blue moon.jpg" alt="Blue Moon" />
           <h3>Blue Moon</h3>
@@ -68,9 +73,10 @@
           <p class="genero">DRAMA</p>
         </article>
 
+        <!-- Película 3 -->
         <article class="card">
           <img
-            src="img/anoche conquisté tebas.jpg"
+            src="img/anoche conquisté tebas.jpg"
             alt="Anoche conquisté Tebas"
           />
           <h3>Anoche conquisté Tebas</h3>
@@ -79,6 +85,7 @@
           <p class="genero">DRAMA</p>
         </article>
 
+        <!-- Película 4 -->
         <article class="card">
           <img src="img/ariel.jpg" alt="Ariel" />
           <h3>Ariel</h3>
@@ -87,6 +94,7 @@
           <p class="genero">EXPERIMENTAL</p>
         </article>
 
+        <!-- Película 5 -->
         <article class="card">
           <img src="img/the presidents cake.jpg" alt="The President's Cake" />
           <h3>The President's Cake</h3>
@@ -95,6 +103,7 @@
           <p class="genero">DRAMA</p>
         </article>
 
+        <!-- Película 6 -->
         <article class="card">
           <img src="img/silent friend.jpg" alt="Silent Friend" />
           <h3>Silent Friend</h3>
@@ -102,6 +111,78 @@
           <p class="info">HUNGRÍA · 2025 · 112'</p>
           <p class="genero">FANTASÍA</p>
         </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PROGRAMACIÓN -->
+    <section id="programacion" class="programacion">
+      <!-- Columna izquierda con imagen de fondo y título -->
+      <div class="prog-col-left">
+        <div class="prog-left-content">
+          <span class="subtit">PROGRAMACIÓN</span>
+          <h2>DESCUBRE<br />TODAS LAS<br />PELÍCULAS</h2>
+          <a href="programacion.html" class="link-btn">VER PROGRAMACIÓN</a>
+        </div>
+      </div>
+
+      <div class="prog-col-right">
+        <div class="prog-list">
+          <!-- Elemento 1 -->
+          <div class="prog-item">
+            <div class="date-box">
+              <span class="day">06</span>
+              <span class="month">ABR</span>
+            </div>
+            <div class="info-box">
+              <p class="category">SECCIÓN OFICIAL</p>
+              <h3>Nuestra Tierra</h3>
+              <p class="time-place">19:00 · CINE DORÉ</p>
+            </div>
+          </div>
+
+          <!-- Elemento 2 -->
+          <div class="prog-item">
+            <div class="date-box">
+              <span class="day">07</span>
+              <span class="month">ABR</span>
+            </div>
+            <div class="info-box">
+              <p class="category">NUEVAS MIRADAS</p>
+              <h3>Anoche conquisté Tebas</h3>
+              <p class="time-place">17:30 · CINE DORÉ</p>
+            </div>
+          </div>
+
+          <!-- Elemento 3 -->
+          <div class="prog-item">
+            <div class="date-box">
+              <span class="day">08</span>
+              <span class="month">ABR</span>
+            </div>
+            <div class="info-box">
+              <p class="category">CORTOS LUMEN</p>
+              <h3>Selección de cortometrajes</h3>
+              <p class="time-place">20:00 · CINE DORÉ</p>
+            </div>
+          </div>
+
+          <!-- Elemento 4 -->
+          <div class="prog-item">
+            <div class="date-box">
+              <span class="day">09</span>
+              <span class="month">ABR</span>
+            </div>
+            <div class="info-box">
+              <p class="category">LUMEN NOCTURNO</p>
+              <h3>Cine de terror: sesión especial</h3>
+              <p class="time-place">22:30 · CINE DORÉ</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="programacion.html" class="see-all-prog"
+          >VER TODA LA PROGRAMACIÓN</a
+        >
       </div>
     </section>
   </body>

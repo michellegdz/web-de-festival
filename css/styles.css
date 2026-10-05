@@ -64,17 +64,9 @@ body {
   font-size: 13px;
   font-weight: 400;
   opacity: 0.8;
-  transition: opacity 0.3s ease;
 }
 
 /* PÁGINA ACTIVA */
-.nav .active {
-  opacity: 1;
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
 .nav a:hover {
   opacity: 1;
 }
@@ -128,7 +120,8 @@ body {
   margin: 0 0 20px 0;
 }
 
-/* SECCIÓN PELÍCULAS */
+/* ====== SECCIÓN PELÍCULAS ====== */
+
 .peliculas {
   min-height: 100vh;
   padding: 60px 56px;
@@ -187,4 +180,147 @@ body {
   font-size: 10px;
   color: #777;
   letter-spacing: 1px;
+}
+
+/* ====== SECCIÓN PROGRAMACIÓN ====== */
+.programacion {
+  min-height: 100vh;
+  display: flex;
+  background-color: #05060a;
+}
+
+/* Columna Izquierda */
+.prog-col-left {
+  flex: 1;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/cine.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 60px 56px;
+  position: relative;
+}
+
+.prog-left-content {
+  color: #ffffff;
+}
+.prog-left-content .subtit {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.prog-left-content h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+}
+
+.prog-left-content .link-btn {
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Columna Derecha */
+.prog-col-right {
+  flex: 1;
+  padding: 80px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prog-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.prog-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.prog-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Bloque Fecha */
+.date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 35px;
+  margin-right: 35px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  min-width: 80px;
+}
+
+.date-box .day {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.date-box .month {
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* Bloque Info */
+.info-box .category {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.info-box h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.info-box .time-place {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Enlace inferior */
+.see-all-prog {
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 0.9;
+  align-self: flex-start;
+}
+
+/* Adaptabilidad móvil */
+@media (max-width: 900px) {
+  .programacion {
+    flex-direction: column;
+  }
+  .prog-col-left,
+  .prog-col-right {
+    padding: 60px 24px;
+  }
 }
