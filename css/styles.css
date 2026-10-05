@@ -68,8 +68,7 @@ body {
 }
 
 /* PÁGINA ACTIVA */
-.nav .active,
-.nav a:focus {
+.nav .active {
   opacity: 1;
   color: #ffffff;
   text-decoration: underline;
