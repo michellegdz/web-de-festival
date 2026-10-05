@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #05060a;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ====== HEADER ====== */
+.header {
+  height: 142px;
+  background: #05060a;
+  display: flex;
+  align-items: center;
+  padding: 0 56px;
+  position: relative;
+  z-index: 10;
+}
+
+/* LOGO */
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 58px;
+  font-weight: 600;
+
+  letter-spacing: -3px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  line-height: 1;
+}
+
+/* DESCRIPCIÓN DEL FESTIVAL */
+.festival-description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 18px;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+
+/* NAVEGACIÓN */
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* PÁGINA ACTIVA */
+.nav .active {
+  opacity: 1;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+/* BOTÓN ENTRADAS */
+.nav .tickets {
+  border: 0.75px solid #ffffff;
+  border-radius: 40px;
+  padding: 12px 30px;
+  opacity: 1;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.nav .tickets:hover {
+  background: #ffffff;
+  color: #05060a;
+}
+
+/* ====== HERO ====== */
+.hero {
+  height: calc(100vh - 142px);
+  background-image: url("img/aftersun.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
