@@ -22,6 +22,7 @@ body {
   align-items: center;
   padding: 0 56px;
   position: sticky;
+  top: 0;
   z-index: 1000;
 }
 
@@ -67,7 +68,8 @@ body {
 }
 
 /* PÁGINA ACTIVA */
-.nav .active {
+.nav .active,
+.nav a:focus {
   opacity: 1;
   color: #ffffff;
   text-decoration: underline;
