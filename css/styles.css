@@ -16,7 +16,7 @@ body {
 
 /* ====== HEADER ====== */
 .header {
-  height: 142px;
+  height: 100px;
   background: #05060a;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ body {
 
 /* ====== HERO ====== */
 .hero {
-  height: calc(100vh - 142px);
+  height: calc(100vh - 100px);
   background-image: url("../img/aftersun.jpg");
   background-size: cover;
   background-position: center;
