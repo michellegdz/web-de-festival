@@ -129,9 +129,9 @@ body {
   margin: 0 0 20px 0;
 }
 
-/* ====== SECCIÓN PELÍCULAS ====== */
+/* ====== SECCIÓN CARTELERA ====== */
 
-.peliculas {
+.cartelera {
   min-height: 100vh;
   padding: 60px 56px;
   display: flex;
@@ -139,26 +139,26 @@ body {
   justify-content: center;
 }
 
-.peliculas-header {
+.cartelera-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.peliculas-header h2 {
+.cartelera-header h2 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 15px;
   letter-spacing: 2px;
 }
 
-.peliculas-header a {
+.cartelera-header a {
   color: #ffffff;
   font-size: 11px;
   letter-spacing: 1px;
 }
 
-.grid-peliculas {
+.grid-cartelera {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 20px;

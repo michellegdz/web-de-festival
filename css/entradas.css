@@ -96,28 +96,219 @@ body {
   color: #05060a;
 }
 
-/* --- FOOTER INFERIOR --- */
-.entradas-footer {
+/* ====== SECCIÓN PELÍCULAS ====== */
+#peliculas {
+  scroll-margin-top: 100px;
+}
+
+.contenedor-peliculas {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  /* Aumentamos a 96px a los lados (frente a los 56px del header) */
+  padding: 40px 96px 100px 96px;
+}
+
+/* BARRA DE FILTROS */
+.filtros {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20pssx 56px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
+  gap: 32px;
+  margin-bottom: 40px;
 }
 
-.footer-notice span {
-  margin-right: 40px;
+.filtro-btn {
+  background: none;
+  border: none;
+  color: #8a8d93;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
-.footer-links a {
-  color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
-  margin-left: 20px;
-  letter-spacing: 1px;
-}
-
-.footer-links a:hover {
+.filtro-btn:hover,
+.filtro-btn.activo {
   color: #ffffff;
+}
+
+.filtro-btn.activo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+/* PARRILLA (4 COLUMNAS) */
+.parrilla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 60px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* TARJETA */
+.tarjeta {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGEN Y TRIÁNGULO EN LA ESQUINA */
+.imagen {
+  position: relative;
+  width: 100%;
+  height: 160px; /* Bajamos la altura de la foto a 160px */
+  overflow: hidden;
+}
+
+.imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Triángulo que "muerde" la imagen desde abajo hacia arriba */
+.triangulo {
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #ffffff;
+  z-index: 2;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #fbe2bc;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 15px;
+  border-bottom-left-radius: 4px;
+}
+
+/* CONTENIDO DE LA TARJETA */
+.info {
+  padding: 24px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #ffffff;
+}
+
+.titulo {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.director {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.datos {
+  font-size: 10px;
+  color: #8a8d93;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.genero {
+  font-size: 10px;
+  color: #8a8d93;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+/* LÍNEA SEPARADORA FINA */
+.linea-separadora {
+  width: 100%;
+  height: 1px;
+  background-color: #d1d1d1;
+  margin-bottom: 20px;
+}
+
+/* PIE DE TARJETA CON BOTÓN Y PRECIO */
+.pie-tarjeta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-comprar {
+  text-decoration: none;
+  color: #000000;
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  padding: 10px 18px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-comprar:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.precio {
+  background: #000000;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.troquelado-inferior {
+  width: 100%;
+  height: 12px;
+  background-color: #ffffff; /* Fondo blanco de la tarjeta */
+  background-image: radial-gradient(
+    circle at 10px 12px,
+    #05060a 6px,
+    transparent 7px
+  );
+  background-size: 20px 12px;
+  background-repeat: repeat-x;
 }
