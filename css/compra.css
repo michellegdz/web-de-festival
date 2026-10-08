@@ -95,3 +95,323 @@ body {
   background: #ffffff;
   color: #05060a;
 }
+
+/* ====== CONTENEDOR PRINCIPAL DE COMPRA ====== */
+.contenedor-compra {
+  width: 100%;
+  padding: 20px 96px 60px 96px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BOTÓN VOLVER (FLECHA FONT AWESOME) */
+.boton-volver {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: opacity 0.2s ease;
+}
+
+.boton-volver:hover {
+  opacity: 0.6;
+}
+
+/* GRID PRINCIPAL (DOS COLUMNAS) */
+.grid-compra {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 120px;
+  align-items: start;
+}
+
+/* TARJETA CONTENEDOR PRINCIPAL */
+.tarjeta-detalle {
+  width: 100%;
+  max-width: 420px; /* Ancho fijo para que mantenga la proporción exacta */
+  background: #ffffff;
+  color: #000000;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* IMAGEN Y OVERLAY */
+.imagen-detalle {
+  position: relative;
+  width: 100%;
+  height: 270px;
+}
+
+.imagen-detalle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-trailer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* Oscurece la foto para ver el play */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* BOTÓN PLAY CIRCULAR */
+.boton-play {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Elimina subrayado de enlace */
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.boton-play i {
+  font-size: 22px;
+  margin-left: 4px;
+}
+
+.boton-play:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.3);
+}
+.txt-trailer {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* INFORMACIÓN INTERNA */
+.info-detalle {
+  padding: 32px 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ENCABEZADO (TÍTULO Y METADATOS) */
+.encabezado-pelicula {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.titulo-pelicula {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.director-pelicula {
+  font-size: 15px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.col-metadatos {
+  text-align: right;
+  font-size: 11px;
+  color: #888888;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* SESIÓN Y UBICACIÓN */
+.bloque-sesion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.etiqueta-sesion {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #000000;
+  margin-right: 10px;
+}
+
+.fecha-hora,
+.lugar {
+  color: #444444;
+  font-weight: 400;
+}
+
+.aviso-apertura {
+  font-size: 11px;
+  color: #aaaaaa;
+  margin-top: 4px;
+}
+
+/* TROQUELADO DE ENTRADA (DIENTES) */
+.troquelado-inferior {
+  width: 100%;
+  height: 14px;
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    circle at 10px 14px,
+    #05060a 7px,
+    transparent 8px
+  );
+  background-size: 20px 14px;
+  background-repeat: repeat-x;
+}
+
+/* ====== COLUMNA DERECHA: FORMULARIO ====== */
+.formulario-compra-wrapper {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.titulo-formulario {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.formulario-compra {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.campo label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  height: 46px;
+  background: #ffffff;
+  border: none;
+  border-radius: 23px;
+  padding: 0 22px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  color: #333333;
+  outline: none;
+}
+
+.campo input::placeholder {
+  color: #888888;
+}
+
+/* Selector desplegable con las flechitas dobles exactas de la imagen */
+.campo select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2218%22%20viewBox%3D%220%200%2012%2018%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M6%200L0%206h12L6%200zm0%2018l6-6H0l6%206z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 10px 14px;
+  cursor: pointer;
+}
+
+.total-compra {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.total-compra span,
+.total-compra strong {
+  font-weight: 400;
+  color: #cccccc;
+}
+
+.btn-comprar-submit {
+  width: 100%;
+  height: 46px;
+  background: #ffffff;
+  color: #555555;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 23px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-comprar-submit:hover {
+  background: #f0f0f0;
+  color: #000000;
+}
+
+/* ====== FOOTER ====== */
+.footer-compra {
+  margin-top: auto;
+  padding: 24px 96px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #8a8d93;
+}
+
+.footer-izq {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-der {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-der a {
+  color: #8a8d93;
+  text-decoration: none;
+}
+
+.footer-der a:hover {
+  color: #ffffff;
+}
