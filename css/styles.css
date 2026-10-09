@@ -848,3 +848,12 @@ body:has(#info:target) .nav a[href="index.html#info"] {
 .footer-enlaces span:hover {
   color: #ffffff;
 }
+
+/* Ocultar el checkbox y la hamburguesa por defecto en escritorio */
+input#menu-toggle.menu-check {
+  display: none !important;
+}
+
+.hamburguesa {
+  display: none !important;
+}

@@ -1,0 +1,86 @@
+/* ==========================================
+   MENÚ HAMBURGUESA RESPONSIVE (rwd.css)
+   ========================================== */
+
+/* Por defecto en escritorio ocultamos el checkbox y la hamburguesa */
+.menu-check,
+.hamburguesa {
+  display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    padding: 0 20px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #05060a;
+    z-index: 1000;
+  }
+
+  /* Ocultamos la descripción larga en pantallas pequeñas */
+  .festival-description {
+    display: none !important;
+  }
+
+  /* Aseguramos que el input checkbox esté totalmente oculto */
+  .menu-check {
+    display: none !important;
+  }
+
+  /* Mostramos el botón hamburguesa y lo alineamos a la derecha */
+  .hamburguesa {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: #ffffff !important;
+    font-size: 24px !important;
+    cursor: pointer;
+    z-index: 1100;
+    margin-left: auto !important;
+  }
+
+  /* Transformamos el menú de navegación en un panel lateral oculto */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Oculto fuera de la pantalla a la derecha */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #07080a;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.95);
+    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1050;
+    margin-left: 0 !important;
+  }
+
+  .nav a {
+    font-size: 18px !important;
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .nav a.tickets {
+    padding: 12px 30px !important;
+    font-size: 14px !important;
+    border-radius: 30px !important;
+  }
+
+  /* ACCIÓN: Al marcar el checkbox, el menú se desliza hacia la pantalla */
+  .menu-check:checked ~ .nav {
+    right: 0;
+  }
+}
