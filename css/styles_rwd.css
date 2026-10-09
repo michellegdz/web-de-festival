@@ -1,5 +1,5 @@
 /* ==========================================
-   MENÚ HAMBURGUESA RESPONSIVE (rwd.css)
+   ESTILOS RESPONSIVE COMPLETOS (LUMEN FESTIVAL)
    ========================================== */
 
 /* Por defecto en escritorio ocultamos el checkbox y la hamburguesa */
@@ -9,6 +9,21 @@
 }
 
 @media screen and (max-width: 900px) {
+  /* --- 0. CORRECCIÓN GENERAL DE ALTURAS Y FLUJO (EVITA SOLAPAMIENTOS) --- */
+  .hero,
+  .programacion,
+  .seccion-cartelera-destacada,
+  .seccion-eventos,
+  .seccion-info-footer {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: relative !important;
+    clear: both !important;
+  }
+
+  /* --- 1. HEADER Y MENÚ MÓVIL --- */
   .header {
     position: sticky;
     top: 0;
@@ -21,17 +36,18 @@
     z-index: 1000;
   }
 
-  /* Ocultamos la descripción larga en pantallas pequeñas */
+  .logo {
+    font-size: 40px !important;
+  }
+
   .festival-description {
     display: none !important;
   }
 
-  /* Aseguramos que el input checkbox esté totalmente oculto */
   .menu-check {
     display: none !important;
   }
 
-  /* Mostramos el botón hamburguesa y lo alineamos a la derecha */
   .hamburguesa {
     display: flex !important;
     align-items: center;
@@ -47,19 +63,18 @@
     margin-left: auto !important;
   }
 
-  /* Transformamos el menú de navegación en un panel lateral oculto */
   .nav {
     position: fixed;
     top: 0;
-    right: -100%; /* Oculto fuera de la pantalla a la derecha */
-    width: 80%;
-    max-width: 300px;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
     height: 100vh;
     background-color: #07080a;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     padding: 40px;
     box-shadow: -20px 0 50px rgba(0, 0, 0, 0.95);
     transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -79,8 +94,299 @@
     border-radius: 30px !important;
   }
 
-  /* ACCIÓN: Al marcar el checkbox, el menú se desliza hacia la pantalla */
   .menu-check:checked ~ .nav {
     right: 0;
+  }
+
+  /* --- 2. SECCIÓN HERO (INDEX) - FOTO ADAPTADA Y SIN CORTES --- */
+  .hero {
+    /* Forzamos una altura generosa y adaptativa para que la foto se expanda correctamente */
+    min-height: 420px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    display: flex !important;
+    align-items: flex-end !important; /* Ancla el texto abajo para que luzca la parte central de la foto */
+    padding: 30px 20px 40px 20px !important;
+    margin-bottom: 20px !important; /* Margen físico real que impide cualquier solapamiento */
+  }
+
+  .hero-text {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 20px !important;
+    background: rgba(
+      5,
+      6,
+      10,
+      0.75
+    ); /* Fondo semitransparente elegante para leer sin tapar la imagen */
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 34px !important;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .hero p {
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* --- 3. SECCIÓN PROGRAMACIÓN (INDEX) --- */
+  .programacion {
+    flex-direction: column !important;
+    margin-top: 20px !important;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .prog-col-left {
+    padding: 40px 20px !important;
+    min-height: 250px;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  .prog-left-content h2 {
+    font-size: 32px !important;
+  }
+
+  .prog-col-right {
+    padding: 40px 20px !important;
+  }
+
+  .prog-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .date-box {
+    flex-direction: row;
+    gap: 10px;
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 10px;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .date-box .day {
+    font-size: 28px;
+  }
+
+  /* --- 4. CARRUSEL DE PELÍCULAS DESTACADAS (INDEX) --- */
+  .seccion-cartelera-destacada {
+    padding: 40px 0;
+  }
+
+  .cartelera-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 90%;
+  }
+
+  #carrusel-pista .tarjeta {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    transform: scale(0.95) !important;
+  }
+
+  #carrusel-pista .tarjeta.tarjeta-destacada-centro {
+    transform: scale(1) !important;
+  }
+
+  /* --- 5. SECCIÓN EVENTOS (INDEX) --- */
+  .seccion-eventos {
+    padding: 40px 20px !important;
+  }
+
+  .eventos-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  .tarjeta-evento {
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* --- 6. SECCIÓN INFO Y FOOTER (INDEX) --- */
+  .seccion-info-footer {
+    padding: 40px 20px 20px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 30px !important;
+  }
+
+  .info-footer-wrapper {
+    height: auto !important;
+  }
+
+  .info-contenido-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .titulos-grandes h2 {
+    font-size: 2rem !important;
+  }
+
+  .info-col-der {
+    align-items: stretch !important;
+  }
+
+  .mapa-wrapper-iframe {
+    max-width: 100% !important;
+    height: 250px !important;
+  }
+
+  .bloque-suscripcion {
+    max-width: 100% !important;
+  }
+
+  .footer-inferior {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .footer-siguenos,
+  .footer-derechos,
+  .footer-enlaces {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* --- 7. PÁGINA DE ENTRADAS (entradas.html) -> 2 COLUMNAS Y FILTROS COMPACTOS --- */
+  .contenedor-peliculas {
+    padding: 20px 15px 60px 15px !important;
+  }
+
+  .filtros {
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filtros::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filtro-btn {
+    flex-shrink: 0;
+    font-size: 10.5px !important;
+    letter-spacing: 1px !important;
+    padding-bottom: 4px;
+  }
+
+  .parrilla {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+  }
+
+  .tarjeta .info {
+    padding: 16px 12px 14px 12px !important;
+  }
+
+  .tarjeta .titulo {
+    font-size: 13px !important;
+  }
+
+  .tarjeta .director {
+    font-size: 11px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .tarjeta .datos,
+  .tarjeta .genero {
+    font-size: 9px !important;
+  }
+
+  .tarjeta .linea-separadora {
+    margin-bottom: 10px !important;
+  }
+
+  .tarjeta .btn-comprar {
+    padding: 6px 10px !important;
+    font-size: 9px !important;
+  }
+
+  .tarjeta .precio {
+    padding: 6px 10px !important;
+    font-size: 9px !important;
+  }
+
+  /* --- 8. PÁGINA DE COMPRA (compra.html) --- */
+  .contenedor-compra {
+    padding: 20px 20px 40px 20px !important;
+  }
+
+  .grid-compra {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .tarjeta-detalle {
+    max-width: 100% !important;
+  }
+
+  .formulario-compra-wrapper {
+    max-width: 100% !important;
+  }
+
+  .footer-compra {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-izq {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-der {
+    justify-content: center;
+  }
+
+  /* --- 9. MODAL DE CONFIRMACIÓN --- */
+  .modal-contenido {
+    width: 95% !important;
+    padding: 20px !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* Ajuste específico para tablets intermedias */
+@media screen and (min-width: 901px) and (max-width: 1150px) {
+  .parrilla {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .grid-compra {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px;
   }
 }
