@@ -1,4 +1,4 @@
-// 1. BASE DE DATOS DE LAS PELÍCULAS (Las claves coinciden con ?id=...)
+
 const peliculas = {
   "nuestra-tierra": {
     titulo: "Nuestra tierra",
@@ -18,7 +18,7 @@ const peliculas = {
     fecha: "11 Diciembre · 21:00",
     lugar: "Cine Doré",
     imagen: "img/the presidents cake.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo2",
+    trailer: "https://youtu.be/EIhlE3lfu6w?si=7821dLj-OGjxzO5E",
   },
   ariel: {
     titulo: "Ariel",
@@ -28,7 +28,7 @@ const peliculas = {
     fecha: "12 Diciembre · 19:00",
     lugar: "Cine Doré",
     imagen: "img/ariel.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo3",
+    trailer: "https://youtu.be/-PIwY7JWVgI?si=oMw2zmpOaqgGRlPN",
   },
   "anoche-conquiste-tebas": {
     titulo: "Anoche conquisté Tebas",
@@ -38,7 +38,7 @@ const peliculas = {
     fecha: "8 Diciembre · 20:30",
     lugar: "Cine Doré",
     imagen: "img/anoche conquisté tebas.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo4",
+    trailer: "https://youtu.be/d6NlZ8L2XxY?si=yRO1H3Ols7U7ug0f",
   },
   "silent-friend": {
     titulo: "Silent Friend",
@@ -48,7 +48,7 @@ const peliculas = {
     fecha: "7 Diciembre · 18:00",
     lugar: "Cine Doré",
     imagen: "img/silent friend.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo5",
+    trailer: "https://youtu.be/72SfEyxoZrA?si=yrexqJJ9DLd02nWn",
   },
   "blue-moon": {
     titulo: "Blue Moon",
@@ -58,7 +58,7 @@ const peliculas = {
     fecha: "9 Diciembre · 20:00",
     lugar: "Cine Doré",
     imagen: "img/blue moon.jpg",
-    trailer: "https://youtu.be/HQXXwZdZtHk?si=BcrIpERX8EyLlZjF",
+    trailer: "https://youtu.be/qo7gRHip0lI?si=qC4elTnQRKVrQ1D-",
   },
   aftersun: {
     titulo: "Aftersun",
@@ -68,7 +68,7 @@ const peliculas = {
     fecha: "6 Diciembre · 19:00",
     lugar: "Cine Doré",
     imagen: "img/aftersun.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo7",
+    trailer: "https://youtu.be/vXKcWRu8K_U?si=cnAZGdF1k8QbnS2j",
   },
   "drive-my-car": {
     titulo: "Drive My Car",
@@ -78,7 +78,7 @@ const peliculas = {
     fecha: "7 Diciembre · 16:00",
     lugar: "Cine Doré",
     imagen: "img/drive my car.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo8",
+    trailer: "https://youtu.be/6BPKPb_RTwI?si=idTvEb5CyBUK3ctP",
   },
   "anatomia-de-una-caida": {
     titulo: "Anatomía de una caída",
@@ -88,7 +88,7 @@ const peliculas = {
     fecha: "8 Diciembre · 17:30",
     lugar: "Cine Doré",
     imagen: "img/anatomia-de-una-caida.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo9",
+    trailer: "https://youtu.be/Qg_2qB_Q7Pc?si=HbhaBSolQumyDTZp",
   },
   "past-lives": {
     titulo: "Past Lives",
@@ -98,7 +98,7 @@ const peliculas = {
     fecha: "9 Diciembre · 18:00",
     lugar: "Cine Doré",
     imagen: "img/past lives.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo10",
+    trailer: "https://youtu.be/kA244xewjcI?si=LgGwgKMfUDqOsYBe",
   },
   creatura: {
     titulo: "Creatura",
@@ -108,7 +108,7 @@ const peliculas = {
     fecha: "10 Diciembre · 20:30",
     lugar: "Cine Doré",
     imagen: "img/creatura.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo11",
+    trailer: "https://youtu.be/VJiO1brjtkc?si=vfbsyiPSr4vq1qm6",
   },
   "24-siete": {
     titulo: "24 Siete",
@@ -118,7 +118,7 @@ const peliculas = {
     fecha: "11 Diciembre · 17:00",
     lugar: "Cine Doré",
     imagen: "img/247.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo12",
+    trailer: "https://youtu.be/CTmkhskrXIY?si=CtBtFgAcQXl1_nC3",
   },
   "aunque-es-de-noche": {
     titulo: "Aunque es de noche",
@@ -128,7 +128,7 @@ const peliculas = {
     fecha: "11 Diciembre · 17:45",
     lugar: "Cine Doré",
     imagen: "img/aunque es de noche.jpeg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo13",
+    trailer: "https://youtu.be/CJqWScaOlgM?si=GzC5j1xp4yDTrPIu",
   },
   "la-quimera": {
     titulo: "La quimera",
@@ -138,7 +138,7 @@ const peliculas = {
     fecha: "12 Diciembre · 21:00",
     lugar: "Cine Doré",
     imagen: "img/la quimera.jpeg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo14",
+    trailer: "https://youtu.be/pN1c2f0P3RQ?si=ty2JB3K18vKSYLdm",
   },
   midsommar: {
     titulo: "Midsommar",
@@ -148,7 +148,7 @@ const peliculas = {
     fecha: "12 Diciembre · 23:00",
     lugar: "Cine Doré",
     imagen: "img/midsommar.jpeg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo15",
+    trailer: "https://youtu.be/3LPZ4agE75Y?si=1p59O1wi8SsYQXwU",
   },
   titane: {
     titulo: "Titane",
@@ -158,12 +158,12 @@ const peliculas = {
     fecha: "12 Diciembre · 23:30",
     lugar: "Cine Doré",
     imagen: "img/titane.jpg",
-    trailer: "https://www.youtube.com/watch?v=ejemplo16",
+    trailer: "https://youtu.be/ryx4DmlcZFU?si=XOA9QruIWmg7irRy",
   },
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // A. Cargar datos dinámicos de la película seleccionada
+  // A. Cargar datos dinámicos de la película seleccionada (compra.html)
   const parametros = new URLSearchParams(window.location.search);
   const peliSeleccionada = parametros.get("id");
 
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("peli-trailer").href = peli.trailer;
   }
 
-  // B. Cálculo de precio del formulario
+  // B. Cálculo de precio del formulario (compra.html)
   const precios = {
     general: 8.0,
     reducida: 6.0,
@@ -218,4 +218,133 @@ document.addEventListener("DOMContentLoaded", () => {
     selectTipo.addEventListener("change", calcularTotal);
     selectCantidad.addEventListener("change", calcularTotal);
   }
-});
+
+  // C. Manejo de la ventana emergente (modal) al enviar el formulario (compra.html)
+  const formulario = document.querySelector(".formulario-compra");
+  const modal = document.getElementById("modal-confirmacion");
+  const btnCerrarModal = document.getElementById("cerrar-modal");
+  const btnAceptarModal = document.getElementById("btn-aceptar-modal");
+
+  if (formulario && modal) {
+    formulario.addEventListener("submit", (e) => {
+      // Evita la recarga automática de la página al enviar
+      e.preventDefault();
+
+      // Recoger valores del formulario
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const tipoText = selectTipo.options[selectTipo.selectedIndex].text;
+      const cantidad = selectCantidad.value;
+      const total = elementoTotal.textContent;
+      const tituloPeli = document.getElementById("peli-titulo")
+        ? document.getElementById("peli-titulo").textContent
+        : "Película";
+
+      // Rellenar la ventana emergente con los datos recibidos
+      document.getElementById("resumen-pelicula").textContent = tituloPeli;
+      document.getElementById("resumen-nombre").textContent = nombre;
+      document.getElementById("resumen-email").textContent = email;
+      document.getElementById("resumen-tipo").textContent = tipoText;
+      document.getElementById("resumen-cantidad").textContent = cantidad;
+      document.getElementById("resumen-total").textContent = total;
+
+      // Mostrar el modal
+      modal.classList.remove("hidden");
+    });
+
+    // Función para ocultar modal y redirigir al inicio
+    function ocultarModal() {
+      modal.classList.add("hidden");
+      formulario.reset();
+      if (elementoTotal) elementoTotal.textContent = "0,00 €";
+
+      // Redirección a index.html
+      window.location.href = "index.html";
+    }
+
+    if (btnCerrarModal) btnCerrarModal.addEventListener("click", ocultarModal);
+    if (btnAceptarModal)
+      btnAceptarModal.addEventListener("click", ocultarModal);
+
+    // Cerrar y redirigir al hacer clic fuera del contenido
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        ocultarModal();
+      }
+    });
+  }
+
+// D. Carrusel con desplazamiento horizontal fluido (index.html)
+  const pista = document.getElementById("carrusel-pista");
+
+  if (pista) {
+    const listaKeys = Object.keys(peliculas);
+
+    // 1. Renderizar todas las tarjetas de la base de datos
+    pista.innerHTML = listaKeys
+      .map((key) => {
+        const peli = peliculas[key];
+        const esCreatura = key === "creatura";
+        return `
+        <article class="tarjeta" data-id="${key}">
+          <div class="imagen">
+            ${esCreatura ? '<span class="etiqueta">Nueva</span>' : ''}
+            <img src="${peli.imagen}" alt="${peli.titulo}" />
+            <div class="triangulo"></div>
+          </div>
+          <div class="info">
+            <h3 class="titulo">${peli.titulo}</h3>
+            <p class="director">${peli.director}</p>
+            <p class="datos">${peli.datos}</p>
+            <p class="genero">${peli.genero}</p>
+            <div class="linea-separadora"></div>
+            <div class="pie-tarjeta">
+              <a href="compra.html?id=${key}" class="btn-comprar">COMPRAR ENTRADAS</a>
+              <span class="precio">${esCreatura ? '7,00 €' : '8,00 €'}</span>
+            </div>
+          </div>
+          <div class="troquelado-inferior"></div>
+        </article>
+      `;
+      })
+      .join("");
+
+    const tarjetas = Array.from(pista.children);
+    let indiceCentral = listaKeys.indexOf("creatura") !== -1 ? listaKeys.indexOf("creatura") : 0;
+
+    function moverCarrusel() {
+      if (tarjetas.length === 0) return;
+
+      const anchoTarjeta = 340;
+      const gap = 40;
+      const paso = anchoTarjeta + gap;
+
+      // Calcular desplazamiento para centrar la tarjeta activa en pantalla
+      const anchoPantalla = window.innerWidth;
+      const centroPantalla = anchoPantalla / 2;
+      const centroTarjeta = paso * indiceCentral + anchoTarjeta / 2;
+      const desplazamiento = centroPantalla - centroTarjeta;
+
+      // Aplicar desplazamiento a la pista
+      pista.style.transform = `translateX(${desplazamiento}px)`;
+
+      // Actualizar clase destacada y escalas
+      tarjetas.forEach((tarjeta, index) => {
+        if (index === indiceCentral) {
+          tarjeta.classList.add("tarjeta-destacada-centro");
+        } else {
+          tarjeta.classList.remove("tarjeta-destacada-centro");
+        }
+      });
+    }
+
+    // Inicialización y ajuste en resize de ventana
+    moverCarrusel();
+    window.addEventListener("resize", moverCarrusel);
+
+    // Movimiento automático cada 4 segundos (4000 ms)
+    setInterval(() => {
+      indiceCentral = (indiceCentral + 1) % tarjetas.length;
+      moverCarrusel();
+    }, 4000);
+  }

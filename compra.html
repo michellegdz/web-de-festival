@@ -50,7 +50,9 @@
           <div class="imagen-detalle">
             <img id="peli-img" src="img/blue moon.jpg" alt="Blue Moon" />
             <div class="overlay-trailer">
+              <!-- Añadido id="peli-trailer" aquí -->
               <a
+                id="peli-trailer"
                 href="https://youtu.be/HQXXwZdZtHk?si=BcrIpERX8EyLlZjF"
                 target="_blank"
                 class="boton-play"
@@ -167,5 +169,39 @@
         <a href="#">TÉRMINOS</a>
       </div>
     </footer>
+
+    <!-- MODAL DE CONFIRMACIÓN DE COMPRA -->
+    <div id="modal-confirmacion" class="modal-overlay hidden">
+      <div class="modal-contenido">
+        <button id="cerrar-modal" class="modal-cerrar" aria-label="Cerrar">
+          &times;
+        </button>
+        <div class="modal-icono">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h2>¡Compra realizada con éxito!</h2>
+        <p class="modal-subtitulo">
+          Hemos enviado tus entradas al correo facilitado.
+        </p>
+
+        <div class="resumen-compra">
+          <p><strong>Película:</strong> <span id="resumen-pelicula">-</span></p>
+          <p><strong>Comprador:</strong> <span id="resumen-nombre">-</span></p>
+          <p><strong>Correo:</strong> <span id="resumen-email">-</span></p>
+          <p>
+            <strong>Tipo de entrada:</strong> <span id="resumen-tipo">-</span>
+          </p>
+          <p><strong>Cantidad:</strong> <span id="resumen-cantidad">-</span></p>
+          <p>
+            <strong>Total pagado:</strong>
+            <span id="resumen-total">0,00 €</span>
+          </p>
+        </div>
+
+        <button id="btn-aceptar-modal" class="btn-modal-aceptar">
+          Aceptar
+        </button>
+      </div>
+    </div>
   </body>
 </html>
