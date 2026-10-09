@@ -1,4 +1,3 @@
-
 const peliculas = {
   "nuestra-tierra": {
     titulo: "Nuestra tierra",
@@ -58,7 +57,7 @@ const peliculas = {
     fecha: "9 Diciembre · 20:00",
     lugar: "Cine Doré",
     imagen: "img/blue moon.jpg",
-    trailer: "https://youtu.be/qo7gRHip0lI?si=qC4elTnQRKVrQ1D-",
+    trailer: "https://youtu.be/qo7gRHip0lI?si=qC4elTnQRQRKVrQ1D-",
   },
   aftersun: {
     titulo: "Aftersun",
@@ -227,10 +226,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (formulario && modal) {
     formulario.addEventListener("submit", (e) => {
-      // Evita la recarga automática de la página al enviar
       e.preventDefault();
 
-      // Recoger valores del formulario
       const nombre = document.getElementById("nombre").value;
       const email = document.getElementById("email").value;
       const tipoText = selectTipo.options[selectTipo.selectedIndex].text;
@@ -240,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ? document.getElementById("peli-titulo").textContent
         : "Película";
 
-      // Rellenar la ventana emergente con los datos recibidos
       document.getElementById("resumen-pelicula").textContent = tituloPeli;
       document.getElementById("resumen-nombre").textContent = nombre;
       document.getElementById("resumen-email").textContent = email;
@@ -248,17 +244,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("resumen-cantidad").textContent = cantidad;
       document.getElementById("resumen-total").textContent = total;
 
-      // Mostrar el modal
       modal.classList.remove("hidden");
     });
 
-    // Función para ocultar modal y redirigir al inicio
     function ocultarModal() {
       modal.classList.add("hidden");
       formulario.reset();
       if (elementoTotal) elementoTotal.textContent = "0,00 €";
-
-      // Redirección a index.html
       window.location.href = "index.html";
     }
 
@@ -266,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnAceptarModal)
       btnAceptarModal.addEventListener("click", ocultarModal);
 
-    // Cerrar y redirigir al hacer clic fuera del contenido
     window.addEventListener("click", (e) => {
       if (e.target === modal) {
         ocultarModal();
@@ -274,21 +265,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-// D. Carrusel con desplazamiento horizontal fluido (index.html)
+  // D. Carrusel con desplazamiento horizontal en BUCLE INFINITO (index.html)
   const pista = document.getElementById("carrusel-pista");
 
   if (pista) {
     const listaKeys = Object.keys(peliculas);
 
-    // 1. Renderizar todas las tarjetas de la base de datos
-    pista.innerHTML = listaKeys
-      .map((key) => {
-        const peli = peliculas[key];
-        const esCreatura = key === "creatura";
-        return `
+    // 1. Plantilla HTML para generar tarjetas de forma limpia
+    function crearHtmlTarjeta(key) {
+      const peli = peliculas[key];
+      const esCreatura = key === "creatura";
+      return `
         <article class="tarjeta" data-id="${key}">
           <div class="imagen">
-            ${esCreatura ? '<span class="etiqueta">Nueva</span>' : ''}
+            ${esCreatura ? '<span class="etiqueta">Nueva</span>' : ""}
             <img src="${peli.imagen}" alt="${peli.titulo}" />
             <div class="triangulo"></div>
           </div>
@@ -300,37 +290,49 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="linea-separadora"></div>
             <div class="pie-tarjeta">
               <a href="compra.html?id=${key}" class="btn-comprar">COMPRAR ENTRADAS</a>
-              <span class="precio">${esCreatura ? '7,00 €' : '8,00 €'}</span>
+              <span class="precio">${esCreatura ? "7,00 €" : "8,00 €"}</span>
             </div>
           </div>
           <div class="troquelado-inferior"></div>
         </article>
       `;
-      })
-      .join("");
+    }
+
+    // 2. Duplicamos el listado (Bloque A + Bloque B) para permitir movimiento continuo sin fin
+    const htmlOriginal = listaKeys.map((key) => crearHtmlTarjeta(key)).join("");
+    pista.innerHTML = htmlOriginal + htmlOriginal;
 
     const tarjetas = Array.from(pista.children);
-    let indiceCentral = listaKeys.indexOf("creatura") !== -1 ? listaKeys.indexOf("creatura") : 0;
+    const totalPeliculas = listaKeys.length;
 
-    function moverCarrusel() {
+    // Iniciar con "Creatura" en el primer bloque
+    let indiceActual =
+      listaKeys.indexOf("creatura") !== -1 ? listaKeys.indexOf("creatura") : 0;
+
+    function moverCarrusel(sinTransicion = false) {
       if (tarjetas.length === 0) return;
 
       const anchoTarjeta = 340;
       const gap = 40;
       const paso = anchoTarjeta + gap;
 
-      // Calcular desplazamiento para centrar la tarjeta activa en pantalla
       const anchoPantalla = window.innerWidth;
       const centroPantalla = anchoPantalla / 2;
-      const centroTarjeta = paso * indiceCentral + anchoTarjeta / 2;
+      const centroTarjeta = paso * indiceActual + anchoTarjeta / 2;
       const desplazamiento = centroPantalla - centroTarjeta;
 
-      // Aplicar desplazamiento a la pista
+      // Desactivar temporalmente la animación si hacemos un reajuste invisible
+      if (sinTransicion) {
+        pista.style.transition = "none";
+      } else {
+        pista.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+      }
+
       pista.style.transform = `translateX(${desplazamiento}px)`;
 
-      // Actualizar clase destacada y escalas
+      // Destacar únicamente la tarjeta que está en el centro
       tarjetas.forEach((tarjeta, index) => {
-        if (index === indiceCentral) {
+        if (index === indiceActual) {
           tarjeta.classList.add("tarjeta-destacada-centro");
         } else {
           tarjeta.classList.remove("tarjeta-destacada-centro");
@@ -338,13 +340,23 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Inicialización y ajuste en resize de ventana
-    moverCarrusel();
-    window.addEventListener("resize", moverCarrusel);
+    // Carga inicial
+    setTimeout(() => moverCarrusel(), 50);
+    window.addEventListener("resize", () => moverCarrusel(true));
 
-    // Movimiento automático cada 4 segundos (4000 ms)
+    // 3. Rotación automática continua cada 4 segundos
     setInterval(() => {
-      indiceCentral = (indiceCentral + 1) % tarjetas.length;
+      indiceActual++;
       moverCarrusel();
+
+      // Cuando completamos el primer bloque y pasamos al segundo,
+      // reajustamos el índice al bloque original de forma invisible cuando termina la transición
+      if (indiceActual >= totalPeliculas) {
+        setTimeout(() => {
+          indiceActual = 0;
+          moverCarrusel(true); // Movimiento instantáneo e imperceptible para el usuario
+        }, 800); // Coincide con los 0.8s de la transición CSS
+      }
     }, 4000);
   }
+});

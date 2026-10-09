@@ -272,8 +272,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0; /* Padding lateral 0 para permitir el desborde horizontal */
-  overflow: hidden; /* Oculta las tarjetas que quedan fuera de la pantalla */
+  padding: 40px 0;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -310,81 +310,485 @@ body {
   color: #ffffff;
 }
 
-/* Contenedor principal del carrusel */
+/* Contenedor wrapper */
 .carrusel-destacadas-wrapper {
   width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
 /* Pista deslizante */
-.carrusel-destacadas-pista {
-  display: flex;
-  align-items: center;
-  gap: 40px; /* Separación constante entre tarjetas */
+#carrusel-pista {
+  display: flex !important;
+  align-items: stretch;
+  gap: 40px;
   will-change: transform;
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Estructura base de cada tarjeta */
-.carrusel-destacadas-pista .tarjeta {
+/* FORZAR ESTILOS DE LA TARJETA DENTRO DEL CARRUSEL */
+#carrusel-pista .tarjeta {
   flex: 0 0 340px !important;
   width: 340px !important;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transform: scale(0.9);
-  opacity: 0.7;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  transform: scale(0.88);
+  opacity: 0.6;
   transition:
     transform 0.8s ease,
-    opacity 0.8s ease;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
+    opacity 0.8s ease !important;
 }
 
-/* Tarjeta enfocado/central */
-.carrusel-destacadas-pista .tarjeta.tarjeta-destacada-centro {
+/* Tarjeta central destacada */
+#carrusel-pista .tarjeta.tarjeta-destacada-centro {
   transform: scale(1.08) !important;
-  opacity: 1;
+  opacity: 1 !important;
   z-index: 5;
 }
 
 /* Imagen y Triángulo */
-.carrusel-destacadas-pista .tarjeta .imagen {
-  height: 320px !important;
+#carrusel-pista .tarjeta .imagen {
   position: relative;
+  width: 100%;
+  height: 200px !important;
   overflow: visible !important;
 }
 
-.carrusel-destacadas-pista .tarjeta .imagen img {
+#carrusel-pista .tarjeta .imagen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.carrusel-destacadas-pista .tarjeta .triangulo {
+#carrusel-pista .tarjeta .triangulo {
   position: absolute;
   bottom: -1px;
-  left: 30px;
+  left: 24px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid #ffffff;
   z-index: 10;
 }
 
-/* Bloque de Información y troquelado */
-.carrusel-destacadas-pista .tarjeta .info {
-  padding: 25px 22px !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
+/* Información interior */
+#carrusel-pista .tarjeta .info {
+  padding: 24px 20px 20px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  background: #ffffff !important;
   margin-bottom: -1px;
 }
 
-.carrusel-destacadas-pista .tarjeta .troquelado-inferior {
+#carrusel-pista .tarjeta .troquelado-inferior {
+  width: 100%;
+  height: 12px;
+  background-color: #ffffff;
+  background-image: radial-gradient(
+    circle at 10px 12px,
+    #07080a 6px,
+    transparent 7px
+  );
+  background-size: 20px 12px;
+  background-repeat: repeat-x;
   margin-top: -1px;
+}
+
+/* ==========================================
+   SECCIÓN EVENTOS / SECCIONES DEL FESTIVAL (100VH EXACTO)
+   ========================================== */
+.seccion-eventos {
+  height: 100vh; /* Altura fija exactadel 100% del viewport */
+  max-height: 100vh;
+  width: 100%;
+  background-color: #07080a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 4%; /* Padding reducido para evitar desbordes */
+  box-sizing: border-box;
+  overflow: hidden; /* Garantiza que nada sobresalga */
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px; /* Espaciado ajustado entre tarjetas */
+  width: 100%;
+  max-width: 1250px;
+  height: 100%;
+  max-height: 85vh; /* Limita la parrilla para encajar en pantalla */
+  align-content: center;
+}
+
+/* Tarjeta Base Blanca */
+.tarjeta-evento {
+  background: #ffffff;
+  border-radius: 24px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  height: 100%; /* Aprovecha la altura proporcional de la parrilla */
+  max-height: 380px;
   position: relative;
-  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-evento:hover {
+  transform: translateY(-4px);
+}
+
+/* 1. Costado blanco para el título vertical */
+.evento-costado-blanco {
+  width: 65px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.evento-titulo-vertical {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}
+
+/* 2. Tira de celuloide negra (Divisor) */
+.evento-celuloide-divisor {
+  background-color: #000000;
+  width: 55px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.evento-celuloide-divisor .perforaciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 88%;
+}
+
+.evento-celuloide-divisor .perforaciones span {
+  width: 24px;
+  height: 14px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+/* 3. Bloque de contenido derecho */
+.evento-contenido {
+  padding: 28px 32px; /* Padding optimizado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #000000;
+  flex-grow: 1;
+}
+
+/* Etiquetas Píldora Negras */
+.etiqueta-pildora {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Texto de la descripción */
+.evento-descripcion {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #333333;
+  margin: 0 0 16px 0;
+}
+
+/* Texto del precio */
+.evento-precio {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  margin: 0;
+}
+
+/* ==========================================
+   SECCIÓN INFO Y FOOTER (100VH EXACTO)
+   ========================================== */
+.seccion-info-footer {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  background-color: #05060a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 30px 60px 15px 60px;
+}
+
+.info-footer-wrapper {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Grid principal de la sección info */
+.info-contenido-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 70px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Columna Izquierda */
+.info-col-izq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulos-grandes h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.8rem, 4.8vw, 5.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin: 0;
+  text-transform: uppercase;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 0;
+}
+
+.titulos-grandes h2:last-child {
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.bloque-contacto {
+  margin-top: 35px;
+}
+
+.subtit-contacto {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #8a8d93;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.email-contacto-linea {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  /* border-top y border-bottom eliminados */
+  padding: 5px 0; /* Padding vertical ajustado para que quede limpio */
+}
+
+.incidencias {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  color: #8a8d93;
+  letter-spacing: 1.5px;
+}
+
+.email-link {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.2rem, 1.9vw, 1.9rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.email-link:hover {
+  opacity: 0.8;
+}
+
+/* Columna Derecha */
+.info-col-der {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+/* Contenedor del Mapa Embebido con Iframe */
+.mapa-wrapper-iframe {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 320px; /* <--- Cambiado de 250px a 320px para hacerlo más alto */
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.mapa-wrapper-iframe:hover {
+  transform: translateY(-3px);
+}
+
+.mapa-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  /* Modo oscuro aplicado al mapa de Google */
+  filter: grayscale(90%) invert(92%) hue-rotate(180deg) contrast(110%);
+}
+
+/* Botón flotante "VER MAPA" */
+.btn-ver-mapa-flotante {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  color: #05060a;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: c0 4px 15px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.btn-ver-mapa-flotante:hover {
+  background-color: #05060a;
+  color: #ffffff;
+}
+
+/* Bloque Suscripción */
+.bloque-suscripcion {
+  width: 100%;
+  max-width: 440px;
+}
+
+.subtit-suscripcion {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #8a8d93;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-correo {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 12px 22px;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-correo:focus {
+  border-color: #ffffff;
+}
+
+.input-correo::placeholder {
+  color: #777777;
+}
+
+/* ==========================================
+   FOOTER INFERIOR
+   ========================================== */
+.footer-inferior {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  font-family: "DM Sans", sans-serif;
+  color: #8a8d93;
+}
+
+.footer-siguenos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  letter-spacing: 1.5px;
+}
+
+.footer-iconos {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-iconos a {
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-iconos a:hover {
+  opacity: 0.7;
+}
+
+.footer-derechos {
+  display: flex;
+  gap: 25px;
+  letter-spacing: 1.5px;
+}
+
+.footer-enlaces {
+  display: flex;
+  gap: 25px;
+  letter-spacing: 1.5px;
+}
+
+.footer-enlaces span {
+  color: #8a8d93;
+  cursor: default;
+  transition: color 0.3s;
+}
+
+.footer-enlaces span:hover {
+  color: #ffffff;
 }

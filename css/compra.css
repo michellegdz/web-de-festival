@@ -106,7 +106,7 @@ body {
 }
 
 /* BOTÓN VOLVER (FLECHA FONT AWESOME) */
-.boton-volver {
+.btn-volver {
   color: #ffffff;
   font-size: 18px;
   text-decoration: none;
@@ -115,7 +115,7 @@ body {
   transition: opacity 0.2s ease;
 }
 
-.boton-volver:hover {
+.btn-volver:hover {
   opacity: 0.6;
 }
 
