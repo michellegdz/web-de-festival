@@ -99,6 +99,60 @@ body {
   color: #05060a !important;
 }
 
+/* ==========================================
+   NAVEGACIÓN ACTIVA POR SECCIÓN (CSS PURO)
+   ========================================== */
+
+/* 1. ESTADO POR DEFECTO: El enlace de INICIO siempre empieza activo (blanco y subrayado) */
+.nav a[href="#"],
+.nav a[href="index.html#"],
+.nav a[href="#inicio"],
+.nav a[href="index.html#inicio"] {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
+  text-decoration-thickness: 2px !important;
+}
+
+/* 2. CUANDO OTRA SECCIÓN ESTÁ ACTIVA, DESACTIVAMOS EL INICIO */
+body:has(#programacion:target) .nav a[href="#"],
+body:has(#programacion:target) .nav a[href="index.html#"],
+body:has(#programacion:target) .nav a[href="#inicio"],
+body:has(#programacion:target) .nav a[href="index.html#inicio"],
+body:has(#cartelera:target) .nav a[href="#"],
+body:has(#cartelera:target) .nav a[href="index.html#"],
+body:has(#cartelera:target) .nav a[href="#inicio"],
+body:has(#cartelera:target) .nav a[href="index.html#inicio"],
+body:has(#eventos:target) .nav a[href="#"],
+body:has(#eventos:target) .nav a[href="index.html#"],
+body:has(#eventos:target) .nav a[href="#inicio"],
+body:has(#eventos:target) .nav a[href="index.html#inicio"],
+body:has(#info:target) .nav a[href="#"],
+body:has(#info:target) .nav a[href="index.html#"],
+body:has(#info:target) .nav a[href="#inicio"],
+body:has(#info:target) .nav a[href="index.html#inicio"] {
+  color: #ffffff !important;
+  opacity: 0.8 !important;
+  text-decoration: none !important;
+}
+
+/* 3. ACTIVAR EL ENLACE DE LA SECCIÓN CORRESPONDIENTE AL HACER CLIC/SCROLL */
+body:has(#programacion:target) .nav a[href="#programacion"],
+body:has(#programacion:target) .nav a[href="index.html#programacion"],
+body:has(#cartelera:target) .nav a[href="#cartelera"],
+body:has(#cartelera:target) .nav a[href="index.html#cartelera"],
+body:has(#eventos:target) .nav a[href="#eventos"],
+body:has(#eventos:target) .nav a[href="index.html#eventos"],
+body:has(#info:target) .nav a[href="#info"],
+body:has(#info:target) .nav a[href="index.html#info"] {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 6px !important;
+  text-decoration-thickness: 2px !important;
+}
+
 /* ====== HERO ====== */
 .hero {
   height: calc(100vh - 100px);
