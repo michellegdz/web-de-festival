@@ -80,20 +80,28 @@ body {
   opacity: 1;
 }
 
-/* BOTÓN ENTRADAS */
-.nav .tickets {
-  border-radius: 40px;
-  padding: 12px 30px;
-  opacity: 1;
-  transition: all 0.3s ease;
-  background: #ffffff;
-  color: #05060a;
-  opacity: 1;
+.nav a.tickets {
+  border: 1.5px solid #ffffff !important;
+  border-radius: 40px !important;
+  padding: 10px 28px !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease !important;
 }
 
-.nav .tickets:hover {
-  background: #ffffff;
-  color: #05060a;
+/* Estado al pasar el ratón (Hover absoluto) */
+.nav a.tickets:hover,
+.header .nav a.tickets:hover {
+  background-color: #ffffff !important;
+  color: #05060a !important;
+}
+
+body.pagina-entradas .nav a.tickets {
+  background-color: #ffffff !important;
+  color: #05060a !important;
 }
 
 /* ====== CONTENEDOR PRINCIPAL DE COMPRA ====== */
