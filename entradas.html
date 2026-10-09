@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web de festival</title>
     <link rel="stylesheet" href="css/entradas.css" />
-    <link rel="stylesheet" href="css/rwd.css" />
+    <link href="css/styles_rwd.css" rel="stylesheet" type="text/css" />
     <script src="js/script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,15 +27,24 @@
       <div class="festival-description">
         <span>FESTIVAL DE CINE</span> <span>6 — 12 DICIEMBRE 2026</span>
       </div>
+
+      <!-- Checkbox y Botón Hamburguesa -->
+      <input type="checkbox" id="menu-toggle" class="menu-check" />
+      <label for="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <!-- Menú de navegación -->
       <nav class="nav">
-        <a href="index.html#inicio">INICIO</a>
-        <a href="index.html#programacion">PROGRAMACIÓN</a>
-        <a href="index.html#cartelera">CARTELERA</a>
-        <a href="index.html#eventos">EVENTOS</a>
-        <a href="index.html#info">INFO</a>
+        <a href="index.html#inicio" class="nav-link">INICIO</a>
+        <a href="index.html#programacion" class="nav-link">PROGRAMACIÓN</a>
+        <a href="index.html#cartelera" class="nav-link">CARTELERA</a>
+        <a href="index.html#eventos" class="nav-link">EVENTOS</a>
+        <a href="index.html#info" class="nav-link">INFO</a>
         <a href="entradas.html" class="tickets">ENTRADAS</a>
       </nav>
     </header>
+    <!-- (AQUÍ TERMINABA EL DUPLICADO QUE ROMPÍA LA PÁGINA) -->
 
     <!-- SECCIÓN PELÍCULAS -->
     <section id="peliculas">
