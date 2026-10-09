@@ -1,15 +1,9 @@
-/* ==========================================
-   ESTILOS RESPONSIVE COMPLETOS (LUMEN FESTIVAL)
-   ========================================== */
-
-/* Por defecto en escritorio ocultamos el checkbox y la hamburguesa */
 .menu-check,
 .hamburguesa {
   display: none !important;
 }
 
 @media screen and (max-width: 900px) {
-  /* --- 0. CORRECCIÓN GENERAL DE ALTURAS Y FLUJO (EVITA SOLAPAMIENTOS) --- */
   .hero,
   .programacion,
   .seccion-cartelera-destacada,
@@ -23,7 +17,7 @@
     clear: both !important;
   }
 
-  /* --- 1. HEADER Y MENÚ MÓVIL --- */
+  /* HEADER Y MENÚ MÓVIL */
   .header {
     position: sticky;
     top: 0;
@@ -98,16 +92,15 @@
     right: 0;
   }
 
-  /* --- 2. SECCIÓN HERO (INDEX) - FOTO ADAPTADA Y SIN CORTES --- */
+  /* SECCIÓN HERO */
   .hero {
-    /* Forzamos una altura generosa y adaptativa para que la foto se expanda correctamente */
     min-height: 420px !important;
     background-size: cover !important;
     background-position: center center !important;
     display: flex !important;
-    align-items: flex-end !important; /* Ancla el texto abajo para que luzca la parte central de la foto */
+    align-items: flex-end !important;
     padding: 30px 20px 40px 20px !important;
-    margin-bottom: 20px !important; /* Margen físico real que impide cualquier solapamiento */
+    margin-bottom: 20px !important;
   }
 
   .hero-text {
@@ -117,12 +110,7 @@
     left: auto !important;
     right: auto !important;
     padding: 20px !important;
-    background: rgba(
-      5,
-      6,
-      10,
-      0.75
-    ); /* Fondo semitransparente elegante para leer sin tapar la imagen */
+    background: rgba(5, 6, 10, 0.75);
     backdrop-filter: blur(4px);
     border-radius: 12px;
     width: 100%;
@@ -139,7 +127,7 @@
     margin-bottom: 8px !important;
   }
 
-  /* --- 3. SECCIÓN PROGRAMACIÓN (INDEX) --- */
+  /* SECCIÓN PROGRAMACIÓN */
   .programacion {
     flex-direction: column !important;
     margin-top: 20px !important;
@@ -183,7 +171,7 @@
     font-size: 28px;
   }
 
-  /* --- 4. CARRUSEL DE PELÍCULAS DESTACADAS (INDEX) --- */
+  /* CARRUSEL PELÍCULAS */
   .seccion-cartelera-destacada {
     padding: 40px 0;
   }
@@ -205,7 +193,7 @@
     transform: scale(1) !important;
   }
 
-  /* --- 5. SECCIÓN EVENTOS (INDEX) --- */
+  /* SECCIÓN EVENTOS */
   .seccion-eventos {
     padding: 40px 20px !important;
   }
@@ -223,7 +211,7 @@
     height: auto !important;
   }
 
-  /* --- 6. SECCIÓN INFO Y FOOTER (INDEX) --- */
+  /* SECCIÓN INFO Y FOOTER */
   .seccion-info-footer {
     padding: 40px 20px 20px 20px !important;
     display: flex !important;
@@ -273,7 +261,7 @@
     flex-wrap: wrap;
   }
 
-  /* --- 7. PÁGINA DE ENTRADAS (entradas.html) -> 2 COLUMNAS Y FILTROS COMPACTOS --- */
+  /* PÁGINA DE ENTRADAS */
   .contenedor-peliculas {
     padding: 20px 15px 60px 15px !important;
   }
@@ -336,7 +324,7 @@
     font-size: 9px !important;
   }
 
-  /* --- 8. PÁGINA DE COMPRA (compra.html) --- */
+  /* PÁGINA DE COMPRA */
   .contenedor-compra {
     padding: 20px 20px 40px 20px !important;
   }
@@ -370,7 +358,7 @@
     justify-content: center;
   }
 
-  /* --- 9. MODAL DE CONFIRMACIÓN --- */
+  /* MODAL DE CONFIRMACIÓN */
   .modal-contenido {
     width: 95% !important;
     padding: 20px !important;
@@ -379,7 +367,6 @@
   }
 }
 
-/* Ajuste específico para tablets intermedias */
 @media screen and (min-width: 901px) and (max-width: 1150px) {
   .parrilla {
     grid-template-columns: repeat(2, 1fr) !important;

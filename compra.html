@@ -28,13 +28,13 @@
         <span>FESTIVAL DE CINE</span> <span>6 — 12 DICIEMBRE 2026</span>
       </div>
 
-      <!-- Checkbox y Botón Hamburguesa -->
+      <!-- Menú Hamburguesa -->
       <input type="checkbox" id="menu-toggle" class="menu-check" />
       <label for="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
         <i class="fa-solid fa-bars"></i>
       </label>
 
-      <!-- Menú de navegación -->
+      <!-- NavBar -->
       <nav class="nav">
         <a href="index.html#inicio" class="nav-link">INICIO</a>
         <a href="index.html#programacion" class="nav-link">PROGRAMACIÓN</a>
@@ -44,9 +44,8 @@
         <a href="entradas.html" class="tickets">ENTRADAS</a>
       </nav>
     </header>
-    <!-- (AQUÍ TERMINABA EL DUPLICADO QUE ROMPÍA LA PÁGINA) -->
 
-    <!-- SECCIÓN PRINCIPAL DE COMPRA -->
+    <!-- SECCIÓN COMPRA -->
     <main class="contenedor-compra">
       <!-- BOTÓN VOLVER -->
       <a href="javascript:history.back();" class="btn-volver">
@@ -54,13 +53,11 @@
       </a>
 
       <div class="grid-compra">
-        <!-- COLUMNA IZQUIERDA: TARJETA DE LA PELÍCULA -->
+        <!-- COLUMNA IZQUIERDA-->
         <div class="tarjeta-detalle">
-          <!-- 1. Zona de Imagen y Tráiler -->
           <div class="imagen-detalle">
             <img id="peli-img" src="img/blue moon.jpg" alt="Blue Moon" />
             <div class="overlay-trailer">
-              <!-- Añadido id="peli-trailer" aquí -->
               <a
                 id="peli-trailer"
                 href="https://youtu.be/HQXXwZdZtHk?si=BcrIpERX8EyLlZjF"
@@ -73,9 +70,6 @@
               <span class="txt-trailer">VER TRÁILER</span>
             </div>
           </div>
-          <!-- Cierre correcto de imagen-detalle -->
-
-          <!-- 2. Información de la Película -->
           <div class="info-detalle">
             <div class="encabezado-pelicula">
               <div class="col-titulos">
@@ -106,11 +100,10 @@
             </p>
           </div>
 
-          <!-- 3. Borde Troquelado Inferior -->
           <div class="troquelado-inferior"></div>
         </div>
 
-        <!-- COLUMNA DERECHA: FORMULARIO DE COMPRA -->
+        <!-- COLUMNA DERECHA -->
         <div class="formulario-compra-wrapper">
           <h2 class="titulo-formulario">SELECCIONA TUS ENTRADAS</h2>
 
@@ -180,12 +173,14 @@
       </div>
     </footer>
 
-    <!-- MODAL DE CONFIRMACIÓN DE COMPRA -->
+    <!-- CONFIRMACIÓN DE COMPRA -->
     <div id="modal-confirmacion" class="modal-overlay hidden">
       <div class="modal-contenido">
-        <button id="cerrar-modal" class="modal-cerrar" aria-label="Cerrar">
-          &times;
-        </button>
+        <button
+          id="cerrar-modal"
+          class="modal-cerrar"
+          aria-label="Cerrar"
+        ></button>
         <div class="modal-icono">
           <i class="fa-solid fa-circle-check"></i>
         </div>

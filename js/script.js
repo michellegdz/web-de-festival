@@ -162,7 +162,6 @@ const peliculas = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // A. Cargar datos dinámicos de la película seleccionada (compra.html)
   const parametros = new URLSearchParams(window.location.search);
   const peliSeleccionada = parametros.get("id");
 
@@ -189,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("peli-trailer").href = peli.trailer;
   }
 
-  // B. Cálculo de precio del formulario (compra.html)
   const precios = {
     general: 8.0,
     reducida: 6.0,
@@ -218,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectCantidad.addEventListener("change", calcularTotal);
   }
 
-  // C. Manejo de la ventana emergente (modal) al enviar el formulario (compra.html)
+  // Formulario
   const formulario = document.querySelector(".formulario-compra");
   const modal = document.getElementById("modal-confirmacion");
   const btnCerrarModal = document.getElementById("cerrar-modal");
@@ -265,13 +263,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // D. Carrusel con desplazamiento horizontal en BUCLE INFINITO (index.html)
+  // D. Carrusel
   const pista = document.getElementById("carrusel-pista");
 
   if (pista) {
     const listaKeys = Object.keys(peliculas);
 
-    // 1. Plantilla HTML para generar tarjetas de forma limpia
     function crearHtmlTarjeta(key) {
       const peli = peliculas[key];
       const esCreatura = key === "creatura";
@@ -298,14 +295,12 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
-    // 2. Duplicamos el listado (Bloque A + Bloque B) para permitir movimiento continuo sin fin
     const htmlOriginal = listaKeys.map((key) => crearHtmlTarjeta(key)).join("");
     pista.innerHTML = htmlOriginal + htmlOriginal;
 
     const tarjetas = Array.from(pista.children);
     const totalPeliculas = listaKeys.length;
 
-    // Iniciar con "Creatura" en el primer bloque
     let indiceActual =
       listaKeys.indexOf("creatura") !== -1 ? listaKeys.indexOf("creatura") : 0;
 
@@ -321,7 +316,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const centroTarjeta = paso * indiceActual + anchoTarjeta / 2;
       const desplazamiento = centroPantalla - centroTarjeta;
 
-      // Desactivar temporalmente la animación si hacemos un reajuste invisible
       if (sinTransicion) {
         pista.style.transition = "none";
       } else {
@@ -330,7 +324,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       pista.style.transform = `translateX(${desplazamiento}px)`;
 
-      // Destacar únicamente la tarjeta que está en el centro
       tarjetas.forEach((tarjeta, index) => {
         if (index === indiceActual) {
           tarjeta.classList.add("tarjeta-destacada-centro");
@@ -340,22 +333,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Carga inicial
     setTimeout(() => moverCarrusel(), 50);
     window.addEventListener("resize", () => moverCarrusel(true));
 
-    // 3. Rotación automática continua cada 4 segundos
     setInterval(() => {
       indiceActual++;
       moverCarrusel();
 
-      // Cuando completamos el primer bloque y pasamos al segundo,
-      // reajustamos el índice al bloque original de forma invisible cuando termina la transición
       if (indiceActual >= totalPeliculas) {
         setTimeout(() => {
           indiceActual = 0;
-          moverCarrusel(true); // Movimiento instantáneo e imperceptible para el usuario
-        }, 800); // Coincide con los 0.8s de la transición CSS
+          moverCarrusel(true);
+        }, 800);
       }
     }, 4000);
   }

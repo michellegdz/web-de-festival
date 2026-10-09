@@ -23,7 +23,7 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-/* ====== HEADER ====== */
+/* HEADER */
 .header {
   height: 100px;
   background: #05060a;
@@ -49,7 +49,7 @@ body {
   line-height: 1;
 }
 
-/* DESCRIPCIÓN DEL FESTIVAL */
+/* DESCRIPCIÓN FESTIVAL */
 .festival-description {
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@ body {
   color: #ffffff;
 }
 
-/* NAVEGACIÓN */
+/* NAVBAR */
 .nav {
   margin-left: auto;
   display: flex;
@@ -92,18 +92,13 @@ body {
     color 0.3s ease !important;
 }
 
-/* Estado al pasar el ratón (Hover absoluto) */
 .nav a.tickets:hover,
 .header .nav a.tickets:hover {
   background-color: #ffffff !important;
   color: #05060a !important;
 }
 
-/* ==========================================
-   NAVEGACIÓN ACTIVA POR SECCIÓN (CSS PURO)
-   ========================================== */
-
-/* 1. ESTADO POR DEFECTO: El enlace de INICIO siempre empieza activo (blanco y subrayado) */
+/* ESTADO POR DEFECTO */
 .nav a[href="#"],
 .nav a[href="index.html#"],
 .nav a[href="#inicio"],
@@ -115,7 +110,6 @@ body {
   text-decoration-thickness: 2px !important;
 }
 
-/* 2. CUANDO OTRA SECCIÓN ESTÁ ACTIVA, DESACTIVAMOS EL INICIO */
 body:has(#programacion:target) .nav a[href="#"],
 body:has(#programacion:target) .nav a[href="index.html#"],
 body:has(#programacion:target) .nav a[href="#inicio"],
@@ -137,7 +131,6 @@ body:has(#info:target) .nav a[href="index.html#inicio"] {
   text-decoration: none !important;
 }
 
-/* 3. ACTIVAR EL ENLACE DE LA SECCIÓN CORRESPONDIENTE AL HACER CLIC/SCROLL */
 body:has(#programacion:target) .nav a[href="#programacion"],
 body:has(#programacion:target) .nav a[href="index.html#programacion"],
 body:has(#cartelera:target) .nav a[href="#cartelera"],
@@ -153,7 +146,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   text-decoration-thickness: 2px !important;
 }
 
-/* ====== HERO ====== */
+/* HERO */
 .hero {
   height: calc(100vh - 100px);
   background-image:
@@ -185,7 +178,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   margin: 0 0 20px 0;
 }
 
-/* ====== SECCIÓN PROGRAMACIÓN ====== */
+/* SECCIÓN PROGRAMACIÓN */
 .programacion {
   min-height: 100vh;
   display: flex;
@@ -260,7 +253,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Bloque Fecha */
 .date-box {
   display: flex;
   flex-direction: column;
@@ -285,7 +277,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   margin-top: 4px;
 }
 
-/* Bloque Info */
 .info-box .category {
   font-size: 9px;
   letter-spacing: 1.5px;
@@ -306,7 +297,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Enlace inferior */
 .see-all-prog {
   color: #ffffff;
   font-size: 11px;
@@ -317,9 +307,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   align-self: flex-start;
 }
 
-/* ==========================================
-   SECCIÓN CARTELERA DESTACADA (CARRUSEL SLIDER)
-   ========================================== */
+/* SECCIÓN CARTELERA */
 .seccion-cartelera-destacada {
   min-height: 100vh;
   width: 100%;
@@ -333,7 +321,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   box-sizing: border-box;
 }
 
-/* Encabezado */
 .cartelera-header {
   display: flex;
   justify-content: space-between;
@@ -366,7 +353,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   color: #ffffff;
 }
 
-/* Contenedor wrapper */
 .carrusel-destacadas-wrapper {
   width: 100%;
   overflow: hidden;
@@ -376,7 +362,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   padding: 20px 0;
 }
 
-/* Pista deslizante */
 #carrusel-pista {
   display: flex !important;
   align-items: stretch;
@@ -385,7 +370,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* FORZAR ESTILOS DE LA TARJETA DENTRO DEL CARRUSEL */
+/* ESTILOS DE LA TARJETA */
 #carrusel-pista .tarjeta {
   flex: 0 0 340px !important;
   width: 340px !important;
@@ -403,14 +388,12 @@ body:has(#info:target) .nav a[href="index.html#info"] {
     opacity 0.8s ease !important;
 }
 
-/* Tarjeta central destacada */
 #carrusel-pista .tarjeta.tarjeta-destacada-centro {
   transform: scale(1.08) !important;
   opacity: 1 !important;
   z-index: 5;
 }
 
-/* Imagen y Triángulo */
 #carrusel-pista .tarjeta .imagen {
   position: relative;
   width: 100%;
@@ -437,7 +420,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   z-index: 10;
 }
 
-/* Información interior */
 #carrusel-pista .tarjeta .info {
   padding: 24px 20px 20px 20px !important;
   display: flex !important;
@@ -461,41 +443,38 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   margin-top: -1px;
 }
 
-/* ==========================================
-   SECCIÓN EVENTOS / SECCIONES DEL FESTIVAL (100VH EXACTO)
-   ========================================== */
+/* SECCIÓN EVENTOS */
 .seccion-eventos {
-  height: 100vh; /* Altura fija exactadel 100% del viewport */
+  height: 100vh;
   max-height: 100vh;
   width: 100%;
   background-color: #07080a;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 4%; /* Padding reducido para evitar desbordes */
+  padding: 40px 4%;
   box-sizing: border-box;
-  overflow: hidden; /* Garantiza que nada sobresalga */
+  overflow: hidden;
 }
 
 .eventos-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px 32px; /* Espaciado ajustado entre tarjetas */
+  gap: 24px 32px;
   width: 100%;
   max-width: 1250px;
   height: 100%;
-  max-height: 85vh; /* Limita la parrilla para encajar en pantalla */
+  max-height: 85vh;
   align-content: center;
 }
 
-/* Tarjeta Base Blanca */
 .tarjeta-evento {
   background: #ffffff;
   border-radius: 24px;
   display: flex;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  height: 100%; /* Aprovecha la altura proporcional de la parrilla */
+  height: 100%;
   max-height: 380px;
   position: relative;
   transition: transform 0.3s ease;
@@ -505,7 +484,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   transform: translateY(-4px);
 }
 
-/* 1. Costado blanco para el título vertical */
 .evento-costado-blanco {
   width: 65px;
   background-color: #ffffff;
@@ -527,7 +505,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   transform: rotate(-90deg);
 }
 
-/* 2. Tira de celuloide negra (Divisor) */
 .evento-celuloide-divisor {
   background-color: #000000;
   width: 55px;
@@ -552,9 +529,8 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   border-radius: 4px;
 }
 
-/* 3. Bloque de contenido derecho */
 .evento-contenido {
-  padding: 28px 32px; /* Padding optimizado */
+  padding: 28px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -563,7 +539,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   flex-grow: 1;
 }
 
-/* Etiquetas Píldora Negras */
 .etiqueta-pildora {
   background-color: #000000;
   color: #ffffff;
@@ -577,7 +552,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   margin-bottom: 10px;
 }
 
-/* Texto de la descripción */
 .evento-descripcion {
   font-family: "DM Sans", sans-serif;
   font-size: 0.88rem;
@@ -586,7 +560,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   margin: 0 0 16px 0;
 }
 
-/* Texto del precio */
 .evento-precio {
   font-family: "DM Sans", sans-serif;
   font-size: 0.9rem;
@@ -595,9 +568,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   margin: 0;
 }
 
-/* ==========================================
-   SECCIÓN INFO Y FOOTER (100VH EXACTO)
-   ========================================== */
+/* SECCIÓN INFO Y FOOTER (100VH EXACTO) */
 .seccion-info-footer {
   height: 100vh;
   max-height: 100vh;
@@ -621,7 +592,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   justify-content: space-between;
 }
 
-/* Grid principal de la sección info */
 .info-contenido-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -671,8 +641,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   display: flex;
   align-items: center;
   gap: 25px;
-  /* border-top y border-bottom eliminados */
-  padding: 5px 0; /* Padding vertical ajustado para que quede limpio */
+  padding: 5px 0;
 }
 
 .incidencias {
@@ -704,12 +673,11 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   gap: 25px;
 }
 
-/* Contenedor del Mapa Embebido con Iframe */
 .mapa-wrapper-iframe {
   position: relative;
   width: 100%;
   max-width: 440px;
-  height: 320px; /* <--- Cambiado de 250px a 320px para hacerlo más alto */
+  height: 320px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
@@ -725,11 +693,9 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   height: 100%;
   border: 0;
   display: block;
-  /* Modo oscuro aplicado al mapa de Google */
   filter: grayscale(90%) invert(92%) hue-rotate(180deg) contrast(110%);
 }
 
-/* Botón flotante "VER MAPA" */
 .btn-ver-mapa-flotante {
   position: absolute;
   bottom: 20px;
@@ -753,7 +719,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   color: #ffffff;
 }
 
-/* Bloque Suscripción */
 .bloque-suscripcion {
   width: 100%;
   max-width: 440px;
@@ -789,9 +754,7 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   color: #777777;
 }
 
-/* ==========================================
-   FOOTER INFERIOR
-   ========================================== */
+/* FOOTER INFERIOR */
 .footer-inferior {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -849,7 +812,6 @@ body:has(#info:target) .nav a[href="index.html#info"] {
   color: #ffffff;
 }
 
-/* Ocultar el checkbox y la hamburguesa por defecto en escritorio */
 input#menu-toggle.menu-check {
   display: none !important;
 }
